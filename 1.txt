@@ -1,0 +1,38 @@
+GET /index.html?uname=fivo&pwd=123456 HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Accept-Language: zh-CN
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: localhost:6666
+Connection: Keep-Alive
+
+POST /index.html HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Accept-Language: zh-CN
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+Host: localhost:6666
+Content-Length: 20
+Connection: Keep-Alive
+Cache-Control: no-cache
+						//空一行
+uname=ghn&pwd=123456
+
+<html>
+	<head>
+		<title>First Form</title>
+	</head>
+	<body>
+		<form method="get" action="http://localhost:6666/index.html">
+			用户名:<input type="text" name="uname" id="uname"/>
+			密码:<input type="password" name="pwd" id=pwd"/>
+			<input type="submit" value="登录"/>
+		</form>		
+	</body>
+</html>
+
+rep.println("<html><head><title>Login</title>");
+rep.println("</head><body>");
+rep.println("欢迎").println(req.getParameterValue("uname")).println("回来");
+rep.println("</body></html>");

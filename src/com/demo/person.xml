@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+  	<person>
+		<name>那就吃</name>
+		<age>614</age>
+	</person>
+	<person>
+		<name>我非常</name>
+		<age>351</age>
+	</person>
+</persons>
